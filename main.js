@@ -56,4 +56,4 @@ function createPlayer(playerClass, name, playerHp, player) {
 }
 
 createPlayer('player1', 'Scorpion', 100, player1)
-createPlayer('player2', 'Kitana', 100, player1)
+createPlayer('player2', 'Kitana', 100, player2)
