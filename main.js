@@ -41,16 +41,18 @@ function createPlayer(playerClass, name, playerHp, player) {
   const $img = document.createElement('img')
   $img.src = player.img
 
-  $progressbar.appendChild($player)
-  $character.appendChild($player)
+  $player.appendChild($progressbar)
+  $player.appendChild($character)
 
-  $life.appendChild($progressbar)
-  $name.appendChild($progressbar)
+  $progressbar.appendChild($life)
+  $progressbar.appendChild($name)
 
-  $img.appendChild($character)
+  $character.appendChild($img)
 
   const $arenas = document.querySelector('div.arenas')
   $arenas.appendChild($player)
+
+  console.log(playerClass)
 }
 
 createPlayer('player1', 'Scorpion', 100, player1)
