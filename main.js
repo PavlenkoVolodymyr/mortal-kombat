@@ -1,5 +1,5 @@
 const $arenas = document.querySelector('div.arenas')
-const $ranbomButton = document.querySelector('.button')
+const $randomButton = document.querySelector('.button')
 
 const player1 = {
   player: 1,
@@ -90,7 +90,7 @@ function randomHp() {
   return hp
 }
 
-$ranbomButton.addEventListener('click', function () {
+$randomButton.addEventListener('click', function () {
   console.log('####: Click')
   changeHP(player1)
   changeHP(player2)
