@@ -70,10 +70,10 @@ function changeHP(player) {
     $randomButton.style = 'display: none'
   }
   if (player1.hp <= 0) {
-    $arenas.appendChild(playerWin(player2.name))
+    $arenas.appendChild(playerWin(player.name))
   }
   if (player2.hp <= 0) {
-    $arenas.appendChild(playerWin(player1.name))
+    $arenas.appendChild(playerWin(player.name))
   }
 }
 
