@@ -65,8 +65,9 @@ function changeHP(player) {
   $playerLife.style.width = player.hp + '%'
 
   if (player.hp <= 0) {
-    $arenas.appendChild(playerWins(player.name))
+    $arenas.appendChild(playerWin(player.name))
     $randomButton.disabled = true
+    $randomButton.style = 'display: none'
   }
 }
 
@@ -77,11 +78,11 @@ function changeHP(player) {
 //   return $loseTitle
 // }
 
-function playerWins(name) {
-  const $playerWins = createElement('div', 'playerWins')
-  $playerWins.innerText = name + ' wins'
+function playerWin(name) {
+  const $winTitle = createElement('div', 'winTitle')
+  $winTitle.innerText = name + ' wins'
 
-  return $playerWins
+  return $winTitle
 }
 
 function randomHp() {
