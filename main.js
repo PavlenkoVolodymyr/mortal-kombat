@@ -65,9 +65,15 @@ function changeHP(player) {
   $playerLife.style.width = player.hp + '%'
 
   if (player.hp <= 0) {
-    $arenas.appendChild(playerWin(player.name))
+    // $arenas.appendChild(playerWin(player.name))
     $randomButton.disabled = true
     $randomButton.style = 'display: none'
+  }
+  if (player1.hp <= 0) {
+    $arenas.appendChild(playerWin(player2.name))
+  }
+  if (player2.hp <= 0) {
+    $arenas.appendChild(playerWin(player1.name))
   }
 }
 
@@ -79,7 +85,7 @@ function changeHP(player) {
 // }
 
 function playerWin(name) {
-  const $winTitle = createElement('div', 'winTitle')
+  let $winTitle = createElement('div', 'winTitle')
   $winTitle.innerText = name + ' wins'
 
   return $winTitle
