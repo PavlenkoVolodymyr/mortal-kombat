@@ -84,7 +84,7 @@ function playerWins(name) {
 }
 
 function randomHp() {
-  let hp = Math.ceil(Math.random() * 10)
+  let hp = Math.ceil(Math.random() * 20)
 
   return hp
 }
