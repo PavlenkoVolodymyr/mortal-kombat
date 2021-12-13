@@ -62,45 +62,44 @@ function changeHP(player) {
     '.player' + player.player + ' .life',
   )
   player.hp -= randomHp()
-  $playerLife.style.width = player.hp + '%'
 
   if (player.hp <= 0) {
-    // $arenas.appendChild(playerWin(player.name))
-    $randomButton.disabled = true
-    $randomButton.style = 'display: none'
+    player.hp = 0
   }
-  if (player1.hp <= 0) {
-    $arenas.appendChild(playerWin(player2.name))
-  }
-  if (player2.hp <= 0) {
-    $arenas.appendChild(playerWin(player1.name))
-  }
+
+  $playerLife.style.width = player.hp + '%'
 }
 
-// function playerLose(name) {
-//   const $loseTitle = createElement('div', 'loseTitle')
-//   $loseTitle.innerText = name + ' lose'
-
-//   return $loseTitle
-// }
-
 function playerWin(name) {
-  let $winTitle = createElement('div', 'winTitle')
-  $winTitle.innerText = name + ' wins'
+  const $loseTitle = createElement('div', 'loseTitle')
+  if (name) {
+    $loseTitle.innerText = name + ' wins'
+  } else {
+    $loseTitle.innerText = 'draw'
+  }
 
-  return $winTitle
+  return $loseTitle
 }
 
 function randomHp() {
-  let hp = Math.ceil(Math.random() * 20)
-
-  return hp
+  return Math.ceil(Math.random() * 20)
 }
 
 $randomButton.addEventListener('click', function () {
   console.log('####: Click')
   changeHP(player1)
   changeHP(player2)
+
+  if (player1.hp === 0 || player2.hp === 0) {
+    $randomButton.disabled = true
+  }
+  if (player1.hp === 0 && player1.hp < player2.hp) {
+    $arenas.appendChild(playerWin(player2.name))
+  } else if (player2.hp === 0 && player2.hp < player1.hp) {
+    $arenas.appendChild(playerWin(player1.name))
+  } else if (player1.hp === 0 && player2.hp === 0) {
+    $arenas.appendChild(playerWin())
+  }
 })
 
 $arenas.appendChild(createPlayer(player1))
