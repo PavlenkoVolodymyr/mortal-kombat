@@ -10,6 +10,9 @@ const player1 = {
   attack: function () {
     console.log(player1.name + '' + 'Fight...');
   },
+  changeHP: changeHP,
+  elHP: elHP,
+  renderHP: renderHP,
 };
 
 const player2 = {
@@ -21,6 +24,9 @@ const player2 = {
   attack: function () {
     console.log(player2.name + '' + 'Fight...');
   },
+  changeHP: changeHP,
+  elHP: elHP,
+  renderHP: renderHP,
 };
 
 function createElement(tag, className) {
@@ -75,19 +81,18 @@ function changeHP(player) {
   if (player.hp <= 0) {
     player.hp = 0;
   }
-
-  $playerLife.style.width = player.hp + '%'; // 'это надо удалить?
 }
 
 function elHP(player) {
   const $playerLife = document.querySelector(
-    '.player' + this.player + ' .life',
+    '.player' + player.player + ' .life',
   );
   return $playerLife;
 }
 
 function renderHP() {
-  $playerLife.style.width = this.hp + '%'; // сомневаюсь что это правильно :-)
+  this.hp.style.width = this.hp + '%';
+  console.log('click', 'hello');
 }
 
 function playerWin(name) {
