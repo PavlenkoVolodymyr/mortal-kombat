@@ -8,6 +8,7 @@ const HIT = {
   foot: 25,
 };
 const ATTACK = ['head', 'body', 'foot'];
+// `${date.getHours() +:+ date.getMinites}`
 const logs = {
   start:
     'Часы показывали [time], когда [player1] и [player2] бросили вызов друг другу.',
@@ -224,13 +225,39 @@ function showResult() {
 }
 
 function generateLogs(type, player1, player2) {
-  const text = logs[type][getRandom(20) - 1]
+  switch (type, player1, player2) {
+    case  'logs[type][getRandom(20) - 1]'
     .replace('[playerKick]', player1.name)
-    .replace('[playerDefence]', player2.name);
-  console.log(text);
-  const el = `<p>${text}<p>`;
-  $chat.insertAdjacentHTML('afterbegin', el);
+    .replace('[playerDefence]', player2.name)
+    .replace('[player1]', player1.name)
+    .replace('[player2]', player2.name)
+    .replace('[time],'`${date.getHours() + ':' + date.getMinites}`):
+      return ' 
+      const st = `<p>${logs.start}<p>`
+      const el = `<p>${text}<p>`
+      const en = `<p>${logs.end}<p>`
+      $chat.insertAdjacentHTML('afterbegin', el)
+      $chat.insertAdjacentHTML('beforebegin', st)
+      $chat.insertAdjacentHTML('afterend', en)'
+  }
 }
+
+// function generateLogs(type, player1, player2) {
+//   const text = logs[type][getRandom(20) - 1]
+    // .replace('[playerKick]', player1.name)
+    // .replace('[playerDefence]', player2.name)
+    // .replace('[player1]', player1.name)
+    // .replace('[player2]', player2.name);
+  // .replace('[time],'`${date.getHours() + ':' + date.getMinites}`);
+//   console.log(text);
+
+//   const st = `<p>${logs.start}<p>`;
+//   const el = `<p>${text}<p>`;
+//   const en = `<p>${logs.end}<p>`;
+//   $chat.insertAdjacentHTML('afterbegin', el);
+//   $chat.insertAdjacentHTML('beforebegin', st);
+//   $chat.insertAdjacentHTML('afterend', en);
+// }
 
 $formFight.addEventListener('submit', function (e) {
   e.preventDefault();
