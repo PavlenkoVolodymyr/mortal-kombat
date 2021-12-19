@@ -225,30 +225,30 @@ function showResult() {
 }
 
 function generateLogs(type, player1, player2) {
-  switch (type, player1, player2) {
-    case  'logs[type][getRandom(20) - 1]'
-    .replace('[playerKick]', player1.name)
-    .replace('[playerDefence]', player2.name)
-    .replace('[player1]', player1.name)
-    .replace('[player2]', player2.name)
-    .replace('[time],'`${date.getHours() + ':' + date.getMinites}`):
-      return ' 
-      const st = `<p>${logs.start}<p>`
-      const el = `<p>${text}<p>`
-      const en = `<p>${logs.end}<p>`
-      $chat.insertAdjacentHTML('afterbegin', el)
-      $chat.insertAdjacentHTML('beforebegin', st)
-      $chat.insertAdjacentHTML('afterend', en)'
+  switch (generateLogs) {
+    case 'type, player1, player2':
+      const text = logs[type][getRandom(20) - 1]
+        .replace('[playerKick]', player1.name)
+        .replace('[playerDefence]', player2.name)
+        .replace('[player1]', player1.name)
+        .replace('[player2]', player2.name)
+        .replace('[time],'`${date.getHours() + ':' + date.getMinites}`);
+      return;
+      const st = `<p>${logs.start}<p>`;
+      const el = `<p>${text}<p>`;
+      const en = `<p>${logs.end}<p>`;
+      $chat.insertAdjacentHTML('afterbegin', el);
+      $chat.insertAdjacentHTML('beforebegin', st);
+      $chat.insertAdjacentHTML('afterend', en);
   }
 }
-
 // function generateLogs(type, player1, player2) {
 //   const text = logs[type][getRandom(20) - 1]
-    // .replace('[playerKick]', player1.name)
-    // .replace('[playerDefence]', player2.name)
-    // .replace('[player1]', player1.name)
-    // .replace('[player2]', player2.name);
-  // .replace('[time],'`${date.getHours() + ':' + date.getMinites}`);
+// .replace('[playerKick]', player1.name)
+// .replace('[playerDefence]', player2.name)
+// .replace('[player1]', player1.name)
+// .replace('[player2]', player2.name);
+// .replace('[time],'`${date.getHours() + ':' + date.getMinites}`);
 //   console.log(text);
 
 //   const st = `<p>${logs.start}<p>`;
